@@ -1,0 +1,41 @@
+# Dart code style
+
+Guidelines for style of Dart code
+
+## Short summary
+
+---
+
+The detailed guidelines for how to write Dart code are written in [official Dart documentation](https://dart.dev/guides/language/effective-dart/style). There is a lot of information with examples. Here will be displayed only main points from there to keep this page short and sweet - so it is easier to read.
+
+## Guidelines
+
+---
+
+### Naming conventions
+
+- PascalCase (concatenated words, all capitalized) for classes, enums, typedefs, type parameters and name extensions;
+- snake_case (lowercase words separated by underscores) for libraries, packages, directories, source files and import prefixes;
+- camelCase (concatenated words, all but first capitalized) for all other identifiers - class member names, parameters, even constants (constants may use CONSTANT_CASE, however camel case is more preferable).
+
+To make it easier to remember here's a rule of thumb: if it's something that has to do with types - name it using pascal case, files and folders - snake case, everything else - camel case.
+
+### Ordering
+
+- Place `dart:` imports before other imports, then `package:` ones (starting with external) and only then relative imports;
+- Specify exports in a separate section after all imports;
+- Sort both of the aforementioned sections alphabetically;
+
+### Formatting
+
+Describing formatting guidelines isn't necessary since there's provided tool `dartfmt` which performs formatting for you. Though it is worth to mention that the formatter may not always work - usually in cases with extremely complicated structure. In this case it is better to simplify the code, not only for formatter to work properly, but also because the code will be easier to read for you and your colleagues. There are a couple of tips for you on formatting though.
+
+- Avoid lines that are longer than 80 lines;
+
+    This may not be the case for URLs or file paths and multi-line strings - these *do* may go beyond the limit.
+
+- Use curly braces for all flow control statements.
+
+    You may, however, keep the conditional statement on the same line as `if` with condition and not use braces if there's no `else` statement and the whole thing fits the 80-character limit.
+
+    If you do wrap the statement though, you must use braces.
